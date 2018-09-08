@@ -1,21 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TicketApp.Repository;
+using TicketApp.Schema.Model;
+using TicketApp.Service;
 
 namespace TicketApp.WebApi
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+
+        public IConfiguration Configuration { get; }
+
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<Entities>(options => 
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc();
+            services.AddAutoMapper(new[]
+            {
+                typeof(AutoMapperConfiguration)
+            });
+            RegisterServices(services);
         }
+
+
+        private void RegisterServices(IServiceCollection services)
+        {
+            services.AddScoped<BusRouteRepository>();
+            services.AddScoped<BusRouteService>();
+        }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -25,10 +51,7 @@ namespace TicketApp.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseMvc();
         }
     }
 }
