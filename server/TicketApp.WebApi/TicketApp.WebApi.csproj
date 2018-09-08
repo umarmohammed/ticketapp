@@ -9,7 +9,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketApp.Domain\TicketApp.Domain.csproj" />
+    <ProjectReference Include="..\TicketApp.Repository\TicketApp.Repository.csproj" />
+    <ProjectReference Include="..\TicketApp.Schema\TicketApp.Schema.csproj" />
+    <ProjectReference Include="..\TicketApp.Service\TicketApp.Service.csproj" />
   </ItemGroup>
 
 </Project>
