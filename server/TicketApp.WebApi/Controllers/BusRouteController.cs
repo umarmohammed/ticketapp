@@ -23,6 +23,8 @@ namespace TicketApp.WebApi.Controllers
         }
 
 
+        [Route("create")]
+        [HttpPost]
         public ActionResult Create(CreateBusRouteCommand cmd)
         {
             if (!ModelState.IsValid)

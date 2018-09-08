@@ -51,6 +51,13 @@ namespace TicketApp.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(policy =>
+            {
+                policy.AllowAnyHeader();
+                policy.AllowAnyMethod();
+                policy.AllowAnyOrigin();
+            });
+
             app.UseMvc();
         }
     }
