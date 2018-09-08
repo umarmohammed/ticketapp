@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext -Connection "Server=DESKTOP-NCS013F\SQLEXPRESS;Database=TicketApp_db;Trusted_Connection=True" -Provider Microsoft.EntityFrameworkCore.SqlServer -OutputDir Model -context Entities -Project TicketApp.Schema -force
