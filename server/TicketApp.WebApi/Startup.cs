@@ -36,7 +36,7 @@ namespace TicketApp.WebApi
         }
 
 
-        private void RegisterServices(IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services)
         {
             services.AddScoped<BusRouteRepository>();
             services.AddScoped<BusRouteService>();

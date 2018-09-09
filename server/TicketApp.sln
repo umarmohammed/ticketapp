@@ -7,13 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketApp.WebApi", "TicketA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketApp.Schema", "TicketApp.Schema\TicketApp.Schema.csproj", "{9CF46F07-3D8D-4620-87B0-285C746B4555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketApp.Domain", "TicketApp.Domain\TicketApp.Domain.csproj", "{178D02D7-31BE-42EB-B27F-E947A388FF43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketApp.Domain", "TicketApp.Domain\TicketApp.Domain.csproj", "{178D02D7-31BE-42EB-B27F-E947A388FF43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketApp.Repository", "TicketApp.Repository\TicketApp.Repository.csproj", "{03C85821-EC7D-4F59-8705-2324C6AED12B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketApp.Repository", "TicketApp.Repository\TicketApp.Repository.csproj", "{03C85821-EC7D-4F59-8705-2324C6AED12B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketApp.Service", "TicketApp.Service\TicketApp.Service.csproj", "{4C02E316-926E-42DA-B982-704CC0762789}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketApp.Service", "TicketApp.Service\TicketApp.Service.csproj", "{4C02E316-926E-42DA-B982-704CC0762789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketApp.Common", "TicketApp.Common\TicketApp.Common.csproj", "{D034F5FE-A0AE-4B1B-98D4-4292BC3F9522}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketApp.Common", "TicketApp.Common\TicketApp.Common.csproj", "{D034F5FE-A0AE-4B1B-98D4-4292BC3F9522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketApp.IntegrationTest", "TicketApp.IntegrationTest\TicketApp.IntegrationTest.csproj", "{5D36713E-68A8-4D0D-BA7D-E17DB84A3F61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{D034F5FE-A0AE-4B1B-98D4-4292BC3F9522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D034F5FE-A0AE-4B1B-98D4-4292BC3F9522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D034F5FE-A0AE-4B1B-98D4-4292BC3F9522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D36713E-68A8-4D0D-BA7D-E17DB84A3F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D36713E-68A8-4D0D-BA7D-E17DB84A3F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D36713E-68A8-4D0D-BA7D-E17DB84A3F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D36713E-68A8-4D0D-BA7D-E17DB84A3F61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
