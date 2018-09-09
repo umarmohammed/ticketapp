@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { BusRoute } from '../../models/bus-route';
 import { BusRouteService } from '../../services/bus-route.service';
 
@@ -20,7 +22,7 @@ export class BusRouteListComponent implements OnInit {
     this.loadBusRoutes();
   }
 
-
+  
   private loadBusRoutes() {
     this.busRouteService.find()
       .then(r => this.busRoutes = r);

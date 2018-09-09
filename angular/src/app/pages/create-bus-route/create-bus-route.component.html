@@ -1,0 +1,14 @@
+<form [formGroup]="busRouteForm" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input type="text" formControlName="name">
+  </label>
+
+  <label>
+    Price: 
+    <input type="number" formControlName="price">
+  </label>
+
+  <button type="submit">Submit</button>
+  
+</form>

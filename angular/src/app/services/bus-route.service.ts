@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BusRouteStore } from "../stores/bus-route-store.service";
 import { BusRoute } from "../models/bus-route";
+import { CreateBusRouteCommand } from "../commands/createBusRoute";
 
 @Injectable()
 export class BusRouteService {
@@ -14,4 +15,9 @@ export class BusRouteService {
     return this.busRouteStore.find();
   }
 
+
+  create(cmd: CreateBusRouteCommand) : Promise<BusRoute> {
+    return this.busRouteStore.create(cmd);
+  }
+  
 }
