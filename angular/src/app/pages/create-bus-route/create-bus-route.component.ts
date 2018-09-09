@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { BusRouteService } from '../../services/bus-route.service';
@@ -13,8 +13,8 @@ import { BusRouteService } from '../../services/bus-route.service';
 export class CreateBusRouteComponent implements OnInit {
 
   busRouteForm = this.fb.group({
-    name: [],
-    price: []
+    name: ['', Validators.required],
+    price: ['', Validators.required]
   });
 
 
