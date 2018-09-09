@@ -11,7 +11,7 @@ namespace TicketApp.Repository
         {
             CreateMap<Schema.Model.BusRoute, Domain.Model.BusRoute>();
 
-            CreateMap<Domain.Command.CreateBusRouteCommand, Domain.Model.BusRoute>();
+            CreateMap<Domain.Command.CreateBusRouteCommand, Schema.Model.BusRoute>();
         }
     }
 }
