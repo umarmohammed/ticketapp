@@ -10,20 +10,30 @@ import { BusRouteStore } from './stores/bus-route-store.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { CreateBusRouteComponent } from './pages/create-bus-route/create-bus-route.component';
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BusRouteComponent } from './pages/bus-route/bus-route.component';
+
+import { CreateBusRouteComponent } from './dialogs/create-bus-route/create-bus-route.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BusRouteListComponent,
-    CreateBusRouteComponent
+    CreateBusRouteComponent,
+    BusRouteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
     HttpClientModule
+  ],
+  entryComponents: [
+    CreateBusRouteComponent
   ],
   providers: [
     BusRouteService,

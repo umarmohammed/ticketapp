@@ -1,7 +1,8 @@
-<ul>
-  <li *ngFor="let route of busRoutes">
-    {{route.name}}
-  </li>
-</ul>
-
-<a routerLink="/create">Add</a>
+<button mat-fab color="primary" (click)="showCreate()" class="ta-fab-create">+</button>
+<mat-grid-list cols="4" rowHeight="1:1" gutterSize="20px">
+    <mat-grid-tile *ngFor="let route of busRoutes">
+      <mat-grid-tile-header>
+        {{route.name}}
+      </mat-grid-tile-header>
+    </mat-grid-tile>
+  </mat-grid-list>

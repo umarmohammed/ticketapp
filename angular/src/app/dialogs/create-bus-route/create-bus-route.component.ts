@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { BusRouteService } from '../../services/bus-route.service';
+import { MatDialogRef } from '@angular/material';
 
 
 @Component({
@@ -17,8 +18,10 @@ export class CreateBusRouteComponent implements OnInit {
     price: ['', Validators.required]
   });
 
+  submitted: boolean;
 
-  constructor(private fb: FormBuilder,
+  constructor(private dialogRef: MatDialogRef<CreateBusRouteComponent>,
+    private fb: FormBuilder,
     private busRouteService: BusRouteService,
     private router: Router) {
 
@@ -30,8 +33,10 @@ export class CreateBusRouteComponent implements OnInit {
 
 
   onSubmit() {
+    this.submitted = true;
+    if (!this.busRouteForm.valid) return;
     this.busRouteService.create(this.busRouteForm.value)
-      .then(r => this.router.navigate(['/busroutes']))
+      .then(r => this.dialogRef.close(true))
   }
 
 }

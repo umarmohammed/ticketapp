@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+      <mat-nav-list>
+          <a routerLink="/busroutes" routerLinkActive="active">Routes</a>
+       </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+      <div class="example-sidenav-content">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-drawer-content>
+</mat-drawer-container>
