@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TicketApp.Schema.Model;
+using TicketApp.WebApi.Filters;
 
 namespace TicketApp.WebApi
 {
@@ -20,7 +21,10 @@ namespace TicketApp.WebApi
             services.AddDbContext<Entities>(options => 
                 options.UseInMemoryDatabase("TestDb"));
 
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new ValidModelAttribute());
+            });
             services.AddAutoMapper();
 
             Startup.RegisterServices(services);

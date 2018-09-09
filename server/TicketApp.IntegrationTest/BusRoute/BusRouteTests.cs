@@ -29,7 +29,7 @@ namespace TicketApp.IntegrationTest.BusRoute
 
 
         [Fact]
-        public async Task TestFind()
+        public async Task TestFind_Returns_Ok()
         {
             var requestUrl = "/api/busroute";
 
@@ -46,7 +46,7 @@ namespace TicketApp.IntegrationTest.BusRoute
 
 
         [Fact]
-        public async Task TestCreate()
+        public async Task TestCreate_Returns_Ok()
         {
             var requestUrl = "/api/busroute/create";
             var cmd = new CreateBusRouteCommand
@@ -62,6 +62,20 @@ namespace TicketApp.IntegrationTest.BusRoute
             var busRoute = JsonConvert.DeserializeObject<Domain.Model.BusRoute>(resultString);
 
             Assert.True(result.IsSuccessStatusCode);
+        }
+
+
+        [Fact]
+        public async Task TestCreateInvalid_Returns_BadRequest()
+        {
+            var requestUrl = "/api/busroute/create";
+            var cmd = new CreateBusRouteCommand();
+
+
+            var result = await _client.PostAsync(requestUrl, cmd.ToJsonStringContent());
+            var resultString = await result.Content.ReadAsStringAsync();
+
+            Assert.True(result.StatusCode == System.Net.HttpStatusCode.BadRequest);
         }
 
     }

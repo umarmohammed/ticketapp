@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using TicketApp.Repository;
 using TicketApp.Schema.Model;
 using TicketApp.Service;
+using TicketApp.WebApi.Filters;
 
 namespace TicketApp.WebApi
 {
@@ -27,7 +28,10 @@ namespace TicketApp.WebApi
         {
             services.AddDbContext<Entities>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddMvc();
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(new ValidModelAttribute());
+            });
             services.AddAutoMapper(new[]
             {
                 typeof(AutoMapperConfiguration)
