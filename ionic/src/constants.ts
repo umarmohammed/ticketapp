@@ -1,0 +1,1 @@
+export const BaseApiUrl: string = 'https://localhost:44351/';
